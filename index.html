@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Sudden Coffee Club - 8 cups / month</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+
+            $('#roastType').change(function() {
+                $(".roast").hide();
+                $('#' + $(this).val()).show();
+            }).change()
+
+            $('#varietyType').change(function() {
+                $(".variety").hide();
+                $('#' + $(this).val()).show();
+            }).change()
+
+            $('#numCups').change(function() {
+                $(".cups").hide();
+                $('#' + $(this).val()).show();
+            }).change()
+
+
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="img/logo_new.svg" />
+        </div>
+        <div class="left">
+            <img src="img/order.jpg" />
+            <p><strong>A difference you can taste</strong> - Coffee is a lot like wine. There is a huge range in quality - and you can often taste the difference. At Sudden, quality is our primary focus. This means we use beans that are hand picked, only when ripe. We use a state-of-the-art method to fully brew coffee before crystalizing it. It's designed to be more gentle, to maximize flavor & aroma. We dehydrate our coffee at subzero temperature to lock-in taste. We don’t use any additives - everything you drink is 100% coffee.</p>
+
+            <p><strong>Want to try it first?</strong> - We offer a trial starter subscription: Click here.</p>
+        </div>
+        <div class="right">
+            <h2>The Sudden Coffee Experience</h2>
+            <h4>Member Benefits</h4>
+            <ul>
+                <li>A new, delicious coffee every quarter</li>
+                <li>Automatic, no need to re-order</li>
+                <li>Bespoke experience, customized to YOU</li>
+            </ul>
+            <form action="order.html" method="GET">
+                <h4>Roast Type:</h4>
+                <select id="roastType" name="roastType">
+      <option class="roasts" value="light">Light</option>
+      <option class="roasts" value="medium">Medium</option>
+      <option class="roasts" value="dark">Dark</option>
+    </select>
+
+                <h4>Variety:</h4>
+                <select id="varietyType" name="varietyType">
+      <option value="comfort">Comfort - One type of coffee</option>
+      <option value="adventure">Adventure - Various types of coffee (Surprise Me!)</option>
+    </select>
+
+                <h4>How Many Cups Per Month?</h4>
+                <select id="numCups" name="numCups">
+      <option value="four">4</option>
+      <option value="eight">8</option>
+      <option value="sixteen">16</option>
+      <option value="thirty-2">32</option>
+      <option value="forty-8">48</option>
+
+    </select>
+
+                <h3>Your Cups Explained:</h3>
+                <div class="cupsWrapper">
+                    <div id="four" class="cups">
+                        <p>4 cups = 1 x 8 pack every 2 months</p>
+                    </div>
+                    <div id="eight" class="cups">
+                        <p>8 cups = 1 x 8 pack every month</p>
+                    </div>
+                    <div id="sixteen" class="cups">
+                        <p>16 cups = 2 x 8 packs every month</p>
+                    </div>
+                    <div id="thirty-2" class="cups">
+                        <p>32 cups = 4 x 8 packs every month</p>
+                    </div>
+                    <div id="forty-8" class="cups">
+                        <p>48 cups = 6 x 8 packs every month</p>
+                    </div>
+                </div>
+                <hr/>
+
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

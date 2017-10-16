@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Order Summary</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+
+            var searchParams = new URLSearchParams(window.location.search);
+            var roastType = searchParams.get("roastType");
+            var varietyType = searchParams.get("varietyType");
+            var numCups = searchParams.get("numCups");
+            $("#roastType").text(roastType);
+            $("#varietyType").text(varietyType);
+            $('#numCups').text(numCups);
+
+
+
+            var replaced = $("body").html().replace('four', '4<br/><br/>1 x 8 pack every 2 months').replace('eight', '8<br/><br/>1 x 8 pack every month')
+                .replace('sixteen', '16<br/><br/>2 x 8 packs every month').replace('thirty-2', '32<br/><br/>4 x 8 packs every month').replace('forty-8', '48<br/><br/>6 x 8 packs every month');
+            $("body").html(replaced);
+
+
+
+
+
+
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="logo">
+        <img src="img/logo_new.svg" />
+    </div>
+    <div id="summary">
+        <h3>Order Summary</h3>
+        <hr/>
+        <div class="order">
+            <img src="img/order.jpg" />
+        </div>
+        <div class="textSummary">
+            <h4>Roast Type:</h4>
+            <span id="roastType"></span>
+            <h4>Variety Type:</h4>
+            <span id="varietyType"></span>
+            <h4>Cups:</h4>
+            <span id="numCups"></span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
