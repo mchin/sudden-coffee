@@ -75,6 +75,7 @@ button {
     font-size: 16px;
     padding: 20px;
     cursor: pointer;
+    margin: 20px 0 0 0;
 }
 #summary {
     display: block;
@@ -99,6 +100,11 @@ h4 {
     color: #000;
     opacity: 0.5;
     font-size: 14px;
+}
+
+a {
+  color: #ec3e3c;
+  text-decoration: none;
 }
 @media only screen and (max-width: 620px) {
     .wrapper,

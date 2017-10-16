@@ -15,6 +15,7 @@
             $('#varietyType').change(function() {
                 $(".variety").hide();
                 $('#' + $(this).val()).show();
+                console.log($(this).val());
             }).change()
 
             $('#numCups').change(function() {
@@ -37,7 +38,7 @@
             <img src="img/order.jpg" />
             <p><strong>A difference you can taste</strong> - Coffee is a lot like wine. There is a huge range in quality - and you can often taste the difference. At Sudden, quality is our primary focus. This means we use beans that are hand picked, only when ripe. We use a state-of-the-art method to fully brew coffee before crystalizing it. It's designed to be more gentle, to maximize flavor & aroma. We dehydrate our coffee at subzero temperature to lock-in taste. We don’t use any additives - everything you drink is 100% coffee.</p>
 
-            <p><strong>Want to try it first?</strong> - We offer a trial starter subscription: Click here.</p>
+            <p><strong>Want to try it first?</strong> - We offer a trial starter subscription: <a href="https://www.suddencoffee.com/products/starter-2-cup-subscription">Click here</a>.</p>
         </div>
         <div class="right">
             <h2>The Sudden Coffee Experience</h2>
@@ -57,8 +58,8 @@
 
                 <h4>Variety:</h4>
                 <select id="varietyType" name="varietyType">
-      <option value="comfort">Comfort - One type of coffee</option>
-      <option value="adventure">Adventure - Various types of coffee (Surprise Me!)</option>
+      <option value="comfort">Comfort </option>
+      <option value="adventure">Adventure </option>
     </select>
 
                 <h4>How Many Cups Per Month?</h4>
@@ -72,6 +73,12 @@
     </select>
 
                 <h3>Your Cups Explained:</h3>
+
+                <div class="varietyWrapper">
+                    <div id="comfort" class="variety"><p>You will get a single coffee </p></div>
+                    <div id="adventure" class="variety"><p>You will get a couple of different coffees</p></div>
+                </div>
+                
                 <div class="cupsWrapper">
                     <div id="four" class="cups">
                         <p>4 cups = 1 x 8 pack every 2 months</p>

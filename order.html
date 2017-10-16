@@ -16,17 +16,27 @@
             $("#varietyType").text(varietyType);
             $('#numCups').text(numCups);
 
-
-
             var replaced = $("body").html().replace('four', '4<br/><br/>1 x 8 pack every 2 months').replace('eight', '8<br/><br/>1 x 8 pack every month')
                 .replace('sixteen', '16<br/><br/>2 x 8 packs every month').replace('thirty-2', '32<br/><br/>4 x 8 packs every month').replace('forty-8', '48<br/><br/>6 x 8 packs every month');
             $("body").html(replaced);
 
+            $('#confirm').click(function() {
+                $.ajax({
+                    'url': '#',
+                    'type': 'GET',
+                    'data': {
+                        'roastType': roastType,
+                        'varietyType': varietyType,
+                        'numCups': numCups
+                    },
 
-
-
-
-
+                    'success': function(data) {
+                        if (data == "success") {
+                            alert('request sent!');
+                        }
+                    }
+                });
+            });
         });
     </script>
     <link rel="stylesheet" href="style.css">
@@ -51,6 +61,7 @@
             <span id="numCups"></span>
         </div>
 
+        <button id="confirm">Confirm Purchase</button>
     </div>
 
 </body>
